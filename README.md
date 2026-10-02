@@ -66,10 +66,3 @@ cypress/
 ## License
 
 MIT
-
-Paste this as the full contents of README.md, save, then run:
-
-powershell
-git add README.md
-git commit -m "Resolve README conflict with clean project description"
-git push -u origin main
