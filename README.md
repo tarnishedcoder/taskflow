@@ -1,80 +1,75 @@
-<<<<<<< HEAD
-# React + TypeScript + Vite
+# TaskFlow
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Kanban-style task management board built to practice modern front-end development — featuring a typed data model, centralized state management, and full REST API integration.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Create, move, and delete tasks across three columns (To Do / In Progress / Done)
+- Persisted via a REST API (json-server) — changes survive page reloads
+- Fully typed with TypeScript, including a normalized board state (tasks and columns stored by ID)
+- Centralized state management using React's `useReducer`
+- Unit tested with Jest and React Testing Library
+- End-to-end tested with Cypress
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend:** React, TypeScript, Vite
+- **State Management:** React `useReducer`
+- **API:** REST (via `json-server`)
+- **Styling:** CSS (Flexbox/Grid)
+- **Testing:** Jest, React Testing Library, Cypress
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Clone the repo and install dependencies:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+git clone https://github.com/tarnishedcoder/taskflow.git
+cd taskflow
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Run the app and the fake API server in two separate terminals:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm run dev      # starts the React app
+npm run server   # starts the REST API (json-server)
 ```
-=======
-# taskflow
-A task management board (like a mini Trello) built to practice modern front-end development — React + TypeScript, useReducer state, REST API integration via json-server, and end-to-end tested with Jest and Cypress.
->>>>>>> 9745e54e63d9842abf1233b39fcef927bc3c162c
+
+Open the local URL printed by `npm run dev` (typically `http://localhost:5173`).
+
+## Running Tests
+
+**Unit tests (Jest):**
+```bash
+npm test
+```
+
+**End-to-end tests (Cypress):**
+```bash
+npx cypress open
+```
+(Requires `npm run dev` and `npm run server` running in separate terminals first.)
+
+## Project Structure
+src/
+├── components/ # Board, Column, TaskCard
+├── data/ # seed data
+├── types.ts # Task, Column, BoardData interfaces
+├── reducer.ts # board state logic (pure, action-based)
+├── api.ts # REST API calls
+└── App.tsx
+cypress/
+└── e2e/ # end-to-end test specs
+
+
+## License
+
+MIT
+
+Paste this as the full contents of README.md, save, then run:
+
+powershell
+git add README.md
+git commit -m "Resolve README conflict with clean project description"
+git push -u origin main
