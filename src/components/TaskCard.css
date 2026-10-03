@@ -19,8 +19,8 @@
     display: inline-block;
     padding: 2px 6px;
     border-radius: 4px;
-    font-size: 12px;
-    color: #fff;
+    font-size: 13px;
+    color: #86ec71;
 }
 .status-badge.todo {
     background-color: #f0ad4e;
@@ -39,7 +39,7 @@
 
 .task-actions button {
   border: none;
-  background: #eee;
+  background: #9ff5db;
   border-radius: 4px;
   padding: 2px 8px;
   cursor: pointer;
@@ -47,5 +47,22 @@
 }
 
 .task-actions button:hover {
-  background: #ddd;
+  background: #7a71ca;
+}
+
+.task-card {
+  /* ...keep everything already there... */
+  touch-action: none;
+  user-select: none;
+}
+
+.task-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  touch-action: none;
+  user-select: none;
 }

@@ -1,39 +1,46 @@
 {
   "tasks": [
     {
-      "id": "task-1",
-      "title": "Set up project",
-      "description": "Scaffold with Vite + TypeScript",
-      "status": "done",
-      "createdAt": "2026-01-01T00:00:00.000Z"
-    },
-    {
-      "id": "task-2",
-      "title": "Define TypeScript interfaces",
-      "description": "Task, Column, BoardData",
-      "status": "in-progress",
-      "createdAt": "2026-01-01T00:00:00.000Z"
-    },
-    {
       "id": "jnNGR4uQq1Q",
       "title": "Test task 1790865273869",
       "description": "",
-      "status": "todo",
+      "status": "done",
       "createdAt": "2026-10-01T14:34:34.207Z"
     },
     {
       "id": "8_FclF1yYiM",
       "title": "breaks",
       "description": "",
-      "status": "todo",
+      "status": "in-progress",
       "createdAt": "2026-10-01T14:35:38.911Z"
     },
     {
-      "id": "gOVRXsDPewU",
-      "title": "Test task 1790865767263",
+      "id": "lKDo_gdXP5k",
+      "title": "bully",
       "description": "",
       "status": "todo",
-      "createdAt": "2026-10-01T14:42:47.544Z"
+      "createdAt": "2026-10-03T14:18:55.965Z"
+    },
+    {
+      "id": "HHt9NsmVnPc",
+      "title": "breaking bad ",
+      "description": "",
+      "status": "todo",
+      "createdAt": "2026-10-03T14:24:27.730Z"
+    },
+    {
+      "id": "xK0ma5kijxU",
+      "title": "shet man",
+      "description": "",
+      "status": "in-progress",
+      "createdAt": "2026-10-03T14:26:25.372Z"
+    },
+    {
+      "id": "my-f6Akw5xI",
+      "title": "eating breakfast",
+      "description": "",
+      "status": "in-progress",
+      "createdAt": "2026-10-03T14:34:39.014Z"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

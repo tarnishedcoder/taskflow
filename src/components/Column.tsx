@@ -3,6 +3,8 @@ import type { Column as ColumnType, Task } from "../types";
 import type { BoardAction } from "../reducer";
 import { createTask } from "../api";
 import TaskCard from "./TaskCard";
+import { useDroppable } from "@dnd-kit/core";
+import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
 import './Column.css';
 
 interface ColumnProps {
@@ -19,6 +21,7 @@ function columnIdToStatus(columnId: string): Task["status"] {
 
 function Column({ column, tasks, dispatch }: ColumnProps) {
   const [newTitle, setNewTitle] = useState('');
+  const { setNodeRef } = useDroppable({ id: column.id });
 
   async function handleAddTask() {
     if (newTitle.trim() === '') return;
@@ -43,10 +46,12 @@ function Column({ column, tasks, dispatch }: ColumnProps) {
   return (
     <div className="column">
       <h2>{column.title}</h2>
-      <div className="column-tasks">
-        {tasks.map((task) => (
-          <TaskCard key={task.id} task={task} columnId={column.id} dispatch={dispatch} />
-        ))}
+      <div className="column-tasks" ref={setNodeRef}>
+        <SortableContext items={tasks.map((t) => t.id)} strategy={verticalListSortingStrategy}>
+          {tasks.map((task) => (
+            <TaskCard key={task.id} task={task} columnId={column.id} dispatch={dispatch} />
+          ))}
+        </SortableContext>
       </div>
       <div className="add-task">
         <input
