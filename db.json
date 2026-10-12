@@ -1,13 +1,6 @@
 {
   "tasks": [
     {
-      "id": "jnNGR4uQq1Q",
-      "title": "Test task 1790865273869",
-      "description": "",
-      "status": "done",
-      "createdAt": "2026-10-01T14:34:34.207Z"
-    },
-    {
       "id": "8_FclF1yYiM",
       "title": "breaks",
       "description": "",
@@ -39,8 +32,22 @@
       "id": "my-f6Akw5xI",
       "title": "eating breakfast",
       "description": "",
-      "status": "in-progress",
+      "status": "todo",
       "createdAt": "2026-10-03T14:34:39.014Z"
+    },
+    {
+      "id": "K5NgLtNb6bo",
+      "title": "bleed",
+      "description": "",
+      "status": "in-progress",
+      "createdAt": "2026-10-11T15:26:45.914Z"
+    },
+    {
+      "id": "vAhGizNb0Nw",
+      "title": "breeding mosquitos xd",
+      "description": "",
+      "status": "done",
+      "createdAt": "2026-10-12T13:54:36.755Z"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

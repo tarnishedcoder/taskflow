@@ -1,15 +1,23 @@
 :root {
+  /* ---- Light theme (default) ---- */
+  --bg: #ffffff;
+  --bg-column: #f4f5f7;
+  --bg-card: #ffffff;
+  --bg-input: #ffffff;
+  --border: #e5e4e7;
   --text: #6b6375;
   --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
   --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  --btn-bg: #e8e9ee;
+  --btn-bg-hover: #d6d8e0;
+  --btn-text: #08060d;
+
+  --badge-text: #ffffff;
+  --badge-todo: #b45309;
+  --badge-in-progress: #0369a1;
+  --badge-done: #15803d;
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
@@ -17,7 +25,7 @@
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
-  color-scheme: light dark;
+  color-scheme: light;
   color: var(--text);
   background: var(--bg);
   font-synthesis: none;
@@ -30,24 +38,23 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
+/* ---- Dark theme: same variables, different values ---- */
+:root[data-theme='dark'] {
+  --bg: #16171d;
+  --bg-column: #1f2028;
+  --bg-card: #2a2c37;
+  --bg-input: #2a2c37;
+  --border: #2e303a;
+  --text: #9ca3af;
+  --text-h: #f3f4f6;
+  --code-bg: #1f2028;
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.4);
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+  --btn-bg: #3a3d4a;
+  --btn-bg-hover: #4a4e5e;
+  --btn-text: #f3f4f6;
+
+  color-scheme: dark;
 }
 
 #root {
@@ -82,6 +89,7 @@ h1 {
     margin: 20px 0;
   }
 }
+
 h2 {
   font-size: 24px;
   line-height: 118%;
@@ -91,19 +99,16 @@ h2 {
     font-size: 20px;
   }
 }
+
 p {
   margin: 0;
 }
 
-code,
-.counter {
+code {
   font-family: var(--mono);
   display: inline-flex;
   border-radius: 4px;
   color: var(--text-h);
-}
-
-code {
   font-size: 15px;
   line-height: 135%;
   padding: 4px 8px;

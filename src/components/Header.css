@@ -1,0 +1,26 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px 0;
+}
+
+.app-header h1 {
+  font-size: 24px;
+  margin: 0;
+  letter-spacing: normal;
+}
+
+.theme-toggle {
+  border: 1px solid var(--border);
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.theme-toggle:hover {
+  background: var(--btn-bg-hover);
+}
